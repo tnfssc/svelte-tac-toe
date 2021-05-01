@@ -1,18 +1,6 @@
-<script lang="ts" context="module">
-  export type ButtonValue = "" | "X" | "O";
-  export type Position = {
-    x: number;
-    y: number;
-  };
-  export type OnClickType = (
-    e: MouseEvent & {
-      currentTarget: EventTarget & HTMLButtonElement;
-    },
-    position?: Position
-  ) => void;
-</script>
-
 <script lang="ts">
+  import type { ButtonValue, OnClickType, Position } from "src/types/TicTacToe";
+
   export let style: string = "";
   export let value: ButtonValue = "";
   export let position: Position;
