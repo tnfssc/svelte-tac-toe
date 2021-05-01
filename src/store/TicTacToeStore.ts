@@ -19,7 +19,7 @@ export function createTicTacToeStore(size: number) {
   return {
     subscribe,
     update: (pos: Position, XO: ButtonValue) =>
-      update(prevStore => {
+      update((prevStore) => {
         prevStore[pos.y][pos.x] = XO;
         return prevStore;
       }),
@@ -31,7 +31,7 @@ export function createTurnStore(initial: ButtonValue = "O") {
   const { subscribe, set, update } = writable<ButtonValue>(initial);
   return {
     subscribe,
-    toggle: () => update(prev => (prev === "O" ? "X" : "O")),
+    toggle: () => update((prev) => (prev === "O" ? "X" : "O")),
     set,
   };
 }
@@ -40,10 +40,15 @@ export function endGame(state: ButtonValue[][]): ButtonValue {
   let primaryDiagCount = 0;
   let secondaryDiagCount = 0;
   for (let i = 0; i < state.length; i++) {
-    if (state[i][0] !== "" && state[i].every(cell => state[i][0] === cell)) return state[i][0]; // Row check
-    if (state[0][i] !== "" && state.every(row => state[0][i] === row[i])) return state[0][i]; // Column check
+    if (state[i][0] !== "" && state[i].every((cell) => state[i][0] === cell))
+      return state[i][0]; // Row check
+    if (state[0][i] !== "" && state.every((row) => state[0][i] === row[i]))
+      return state[0][i]; // Column check
     if (state[0][0] !== "" && state[i][i] === state[0][0]) primaryDiagCount++; // Primary diagonal check
-    if (state[0][state.length - 1] !== "" && state[i][state.length - 1 - i] === state[0][state.length - 1])
+    if (
+      state[0][state.length - 1] !== "" &&
+      state[i][state.length - 1 - i] === state[0][state.length - 1]
+    )
       secondaryDiagCount++; // Secondary diagonal check
   }
   if (primaryDiagCount === state.length) return state[0][0];
