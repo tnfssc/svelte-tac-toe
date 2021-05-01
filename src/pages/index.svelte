@@ -5,12 +5,15 @@
 
   let ticTacToeState = createTicTacToeStore(3);
   let currentTurn = createTurnStore();
+
+  const handleReset = () => ticTacToeState.reset();
   const handleClick: OnClickType = (_, position) => {
     if (!position || winner !== "") return;
     if ($ticTacToeState[position.y][position.x] !== "") return;
     ticTacToeState.update(position, $currentTurn);
     currentTurn.toggle();
   };
+
   let winner = "";
   $: winner = endGame($ticTacToeState);
 </script>
@@ -23,5 +26,7 @@
       {/each}
     </div>
   {/each}
-  Winner: {winner}
+  <button on:click={handleReset}>
+    Winner: {winner}
+  </button>
 </main>
