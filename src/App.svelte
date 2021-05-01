@@ -7,6 +7,7 @@
   let currentTurn = createTurnStore();
   const handleClick: OnClickType = (_, position) => {
     if (!position || winner !== "") return;
+    if ($ticTacToeState[position.y][position.x] !== "") return;
     ticTacToeState.update(position, $currentTurn);
     currentTurn.toggle();
   };

@@ -20,7 +20,6 @@ export function createTicTacToeStore(size: number) {
     subscribe,
     update: (pos: Position, XO: ButtonValue) =>
       update(prevStore => {
-        if (prevStore[pos.y][pos.x] !== "") return prevStore;
         prevStore[pos.y][pos.x] = XO;
         return prevStore;
       }),
