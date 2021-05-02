@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "devDependencies": {
+    "@rollup/plugin-eslint": "^8.0.1",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.7",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
@@ -19,6 +20,7 @@
     "prettier-plugin-svelte": "^2.2.0",
     "sass": "^1.32.12",
     "svelte": "^3.37.0",
+    "svelte-icons": "^2.1.0",
     "svelte-preprocess": "^4.7.2",
     "typescript": "^4.2.4",
     "vite": "^2.2.3"
@@ -29,30 +31,5 @@
     "svelteBracketNewLine": false,
     "svelteAllowShorthand": false,
     "svelteIndentScriptAndStyle": true
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "globals": {
-      "svelte": "readonly"
-    },
-    "plugins": [
-      "svelte3",
-      "@typescript-eslint"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "*.svelte"
-        ],
-        "processor": "svelte3/svelte3"
-      }
-    ],
-    "settings": {
-      "svelte3/typescript": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended"
-    ]
   }
 }

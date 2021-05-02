@@ -7,7 +7,7 @@
     endGame,
   } from "../store/TicTacToeStore";
 
-  let ticTacToeState = createTicTacToeStore(3);
+  let ticTacToeState = createTicTacToeStore(4);
   let currentTurn = createTurnStore();
 
   const handleReset = () => ticTacToeState.reset();
@@ -33,18 +33,32 @@
 </script>
 
 <main>
-  {#each $ticTacToeState as row, i}
-    <div style="display: flex;">
-      {#each row as cell, j}
-        <Button
-          onClick="{handleClick}"
-          position="{{ x: j, y: i }}"
-          value="{cell}"
-          style="margin: 2px" />
+  <div class="content">
+    <div style="width: 90%; max-width: 800px;">
+      {#each $ticTacToeState as row, i}
+        <div style="display: flex;">
+          {#each row as cell, j}
+            <Button
+              onClick="{handleClick}"
+              position="{{ x: j, y: i }}"
+              value="{cell}"
+              style="margin: 12px; width: 30%;" />
+          {/each}
+        </div>
       {/each}
+      <button on:click="{handleReset}">
+        Winner: {winner}
+      </button>
     </div>
-  {/each}
-  <button on:click="{handleReset}">
-    Winner: {winner}
-  </button>
+  </div>
 </main>
+
+<style>
+  .content {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
