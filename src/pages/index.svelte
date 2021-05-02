@@ -11,7 +11,7 @@
   let currentTurn = createTurnStore();
 
   const handleReset = () => ticTacToeState.reset();
-  const handleClick: OnClickType = (_, position) => {
+  const handleClick: OnClickType = (position) => {
     if (!position || winner !== "") return;
     if (
       position.y > $ticTacToeState.length - 1 ||

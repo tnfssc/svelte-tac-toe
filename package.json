@@ -32,6 +32,9 @@
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
+    "globals": {
+      "svelte": "readonly"
+    },
     "plugins": [
       "svelte3",
       "@typescript-eslint"
@@ -47,20 +50,9 @@
     "settings": {
       "svelte3/typescript": true
     },
-    "parserOptions": {
-      "tsconfigRootDir": ".",
-      "project": [
-        "./tsconfig.json"
-      ],
-      "extraFileExtensions": [
-        ".svelte",
-        ".cjs"
-      ]
-    },
     "extends": [
       "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      "plugin:@typescript-eslint/recommended"
     ]
   }
 }

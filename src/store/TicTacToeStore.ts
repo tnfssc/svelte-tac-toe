@@ -1,6 +1,7 @@
 import type { ButtonValue, Position } from "src/types/TicTacToe";
 import { writable } from "svelte/store";
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function createTicTacToeStore(size: number) {
   function newStore(size: number) {
     const store: ButtonValue[][] = [];
@@ -27,6 +28,7 @@ export function createTicTacToeStore(size: number) {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function createTurnStore(initial: ButtonValue = "O") {
   const { subscribe, set, update } = writable<ButtonValue>(initial);
   return {

@@ -5,8 +5,7 @@
   export let value: ButtonValue = "";
   export let position: Position;
   export let onClick: OnClickType;
-  const handleClick: svelte.JSX.MouseEventHandler<HTMLButtonElement> = (e) =>
-    onClick(e, position);
+  const handleClick = () => onClick(position);
 </script>
 
 <button on:click="{handleClick}" style="{style}">
