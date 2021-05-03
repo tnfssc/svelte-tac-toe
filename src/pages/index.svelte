@@ -40,7 +40,6 @@
   let overlayOpacity = 0;
   $: newOverlayOpacity(winner);
   const newOverlayOpacity = (wins: ButtonValue) => {
-    console.log(winner);
     if (wins === "" || overlayOpacity >= 1) return;
     overlayOpacity += 0.05;
     requestAnimationFrame(() => newOverlayOpacity(wins));
