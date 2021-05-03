@@ -11,7 +11,7 @@
   const handleClick = () => onClick(position);
 </script>
 
-<button on:click="{handleClick}" style="{style} aspect-ratio: 1;">
+<div role="button" on:click="{handleClick}" style="{style} aspect-ratio: 1;">
   <span class="{value !== '' ? 'full-opacity' : ''}">
     {#if value === "X"}
       <MdClose />
@@ -20,10 +20,10 @@
       <MdRadioButtonUnchecked />
     {/if}
   </span>
-</button>
+</div>
 
 <style>
-  button {
+  div {
     min-width: 48px;
     min-height: 48px;
     transition: transform ease-in-out 250ms;
@@ -39,10 +39,10 @@
     cursor: pointer;
   }
 
-  button:hover {
+  div:hover {
     transform: scale(1.05);
   }
-  button:focus {
+  div:focus {
     border: 1px solid aqua;
   }
   span {

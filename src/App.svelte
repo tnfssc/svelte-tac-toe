@@ -2,7 +2,7 @@
   import IndexPage from "./pages/index.svelte";
 </script>
 
-<main>
+<main style="position: relative;">
   <IndexPage />
 </main>
 
