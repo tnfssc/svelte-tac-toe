@@ -2,7 +2,9 @@
   "name": "svelte-tac-toe",
   "version": "0.0.0",
   "license": "MIT",
+  "private": true,
   "scripts": {
+    "prepare": "husky install",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
@@ -15,6 +17,7 @@
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.25.0",
     "eslint-plugin-svelte3": "^3.2.0",
+    "husky": "^6.0.0",
     "prettier": "^2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "sass": "^1.32.12",
