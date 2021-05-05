@@ -19,5 +19,5 @@
     "svelte3/typescript": true
   },
   "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-  "ignorePatterns": ["node_modules", "dist", ".vscode", ".husky", "build"]
+  "ignorePatterns": ["node_modules", "dist", ".vscode", ".husky", "build", "api"]
 }
