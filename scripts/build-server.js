@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import esbuild from "esbuild";
 
-require("esbuild").buildSync({
+esbuild.buildSync({
   entryPoints: ["./server.ts"],
-  bundle: true,
+  bundle: false,
   platform: "node",
-  target: ["node12"],
-  outfile: "./dist/api/index.js",
+  target: ["node10"],
+  outdir: "./dist/api",
   minify: process.env.NODE_ENV === "production",
-  external: ["path"],
 });

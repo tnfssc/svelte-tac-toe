@@ -4,5 +4,5 @@
   "colours": true,
   "delay": 1,
   "ext": "ts",
-  "exec": "node scripts/build-server && node build/server.js"
+  "exec": "node scripts/build-server && node dist/api/server.js"
 }
