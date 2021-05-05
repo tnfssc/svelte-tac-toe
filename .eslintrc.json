@@ -1,7 +1,8 @@
 {
   "root": true,
   "env": {
-    "browser": true
+    "browser": true,
+    "node": true
   },
   "parser": "@typescript-eslint/parser",
   "globals": {
@@ -18,5 +19,5 @@
     "svelte3/typescript": true
   },
   "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-  "ignorePatterns": ["node_modules", "dist", ".vscode", ".husky"]
+  "ignorePatterns": ["node_modules", "dist", ".vscode", ".husky", "build"]
 }

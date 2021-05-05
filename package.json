@@ -4,20 +4,35 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "dev-web": "cross-env NODE_ENV=development vite",
+    "build-web": "cross-env NODE_ENV=production vite build",
+    "dev-server": "cross-env NODE_ENV=development nodemon",
+    "build-server": "cross-env NODE_ENV=production node scripts/build-server.js",
+    "dev": "concurrently --kill-others \"yarn:dev-*\"",
+    "build": "yarn build-web && yarn build-server",
+    "start": "cross-env NODE_ENV=production node build/server.js",
     "prepare": "husky install",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
     "pretty": "prettier --write .",
     "lint": "eslint ."
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.7",
+    "@types/node": "^15.0.1",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "@vercel/node": "^1.10.0",
+    "concurrently": "^6.0.2",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "esbuild": "^0.11.18",
     "eslint": "^7.25.0",
     "eslint-plugin-svelte3": "^3.2.0",
+    "fastify": "^3.15.1",
+    "fastify-cors": "^6.0.0",
+    "fastify-helmet": "^5.3.1",
+    "fastify-static": "^4.0.1",
     "husky": "^6.0.0",
+    "nodemon": "^2.0.7",
     "prettier": "^2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "sass": "^1.32.12",
@@ -33,5 +48,6 @@
     "svelteBracketNewLine": false,
     "svelteAllowShorthand": false,
     "svelteIndentScriptAndStyle": true
-  }
+  },
+  "dependencies": {}
 }

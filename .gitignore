@@ -103,6 +103,7 @@ storybook-static
 
 # rollup.js default build output
 dist/
+build/
 
 # Gatsby files
 .cache/
@@ -141,3 +142,5 @@ temp/
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/node,vscode
+
+.vercel

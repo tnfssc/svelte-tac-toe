@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json.schemastore.org/nodemon.json",
+  "ignore": [".gitignore", "*.test.js", ".husky", "scripts"],
+  "colours": true,
+  "delay": 1,
+  "ext": "ts",
+  "exec": "node scripts/build-server && node build/server.js"
+}
