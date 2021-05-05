@@ -1,11 +1,11 @@
-import esbuild from "esbuild";
+/* eslint-disable */
 
-esbuild.buildSync({
+require("esbuild").buildSync({
   entryPoints: ["./server.ts"],
   format: "cjs",
   bundle: false,
   platform: "node",
   target: ["node10"],
-  outdir: "./dist/api",
+  outdir: "./build",
   minify: process.env.NODE_ENV === "production",
 });
