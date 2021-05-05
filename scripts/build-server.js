@@ -5,7 +5,7 @@ require("esbuild").buildSync({
   bundle: true,
   platform: "node",
   target: ["node12"],
-  outfile: "./api/index.js",
+  outfile: "./dist/api/index.js",
   minify: process.env.NODE_ENV === "production",
   external: ["path"],
 });
